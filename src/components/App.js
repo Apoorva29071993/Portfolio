@@ -8,6 +8,7 @@ import Home from './Home.jsx';
 import About from './About.jsx';
 import MyProjects from './MyProjects.jsx';
 import Skills from './Skills.jsx';
+import Cauvery from './Cauvery.jsx';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
         <Switch>
           <Route exact path="/"><Home value={value} setValue={setValue}/></Route> 
           <Route exact path="/myprojects"><MyProjects/></Route>
-          <Route exact path="/cauvery" component={()=><div>Cauvery Enterprises</div>} />
+          <Route exact path="/cauvery" render={()=><Cauvery />} />
           <Route exact path="/ecommerce" component={()=><div>E-Commerce</div>} />
           <Route exact path="/nisarga" component={()=><div>Nisarga</div>} />
           <Route exact path="/about" component={About} />
