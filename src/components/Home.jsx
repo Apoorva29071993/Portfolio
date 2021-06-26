@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
         },
         [theme.breakpoints.down("sm")] : {
             marginTop : "3rem",
-            fontSize : "2rem" ,
+            fontSize : "2.5rem" ,
             marginRight : "5rem"
         },
         [theme.breakpoints.down("xs")] : {
@@ -83,7 +83,7 @@ const useStyles = makeStyles(theme => ({
           minWidth : "21.5em" ,
           marginLeft : "1em",
           [theme.breakpoints.down("sm")] : {
-              marginLeft : 0
+              marginLeft : "3rem",
           }
       },
       viewButton : {
@@ -135,7 +135,7 @@ export default function Home(props){
 
         <Grid container direction="column" className={classes.mainContainer}>
             <Grid item >
-                <Grid container direction="row" justify="flex-end" alignItems="center">
+                <Grid container direction={matchesSM ? "column" : "row"} justify="flex-end" alignItems="center">
 
                     <Grid item sm className={classes.TextContainer}>
                         <Typography variant="h3" align="center" className={classes.details}>

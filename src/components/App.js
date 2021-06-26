@@ -9,6 +9,7 @@ import About from './About.jsx';
 import MyProjects from './MyProjects.jsx';
 import Skills from './Skills.jsx';
 import Cauvery from './Cauvery.jsx';
+import Contact from './Contact.jsx';
 
 function App() {
 
@@ -28,7 +29,7 @@ function App() {
           <Route exact path="/nisarga" component={()=><div>Nisarga</div>} />
           <Route exact path="/about" component={About} />
           <Route exact path="/skills" ><Skills /></Route> 
-          <Route exact path="/contact" component={()=><div>Contact</div>} />
+          <Route exact path="/contact" render={()=><Contact />} />
           <Route exact path="/signin" component={()=><div>Sign In</div>} />
         </Switch>
         <Footer value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
