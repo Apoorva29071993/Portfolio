@@ -22,7 +22,8 @@ const useStyles = makeStyles(theme => ({
         width: "15em",
         marginTop : "2rem",
         marginBottom : "2rem",
-        marginLeft : "2rem",
+        marginLeft : "5rem",
+        marginRight : "10rem",
         [theme.breakpoints.down("sm")]: {
           height: "10em",
           width: "10em",
@@ -30,15 +31,15 @@ const useStyles = makeStyles(theme => ({
           maxWidth: 300,
           marginTop : "3rem",
           marginBottom : "0rem",
-          marginleft : "2rem"
+          marginleft : "-5rem"
         },
         [theme.breakpoints.down("xs")]: {
             height: "10em",
             width: "10em",
             maxHeight: 300,
             maxWidth: 300,
-            marginRight : "2rem",
-            marginTop : "0.5em"
+            marginRight : "5rem",
+            marginTop : "0.5em",
           }
     } ,
     mainContainer: {
@@ -76,7 +77,7 @@ const useStyles = makeStyles(theme => ({
     card : {
         backgroundColor : theme.palette.common.gross,
         boxShadow : theme.shadows[10],
-        borderRadius : 0 ,
+        borderRadius : "2rem",
         padding : "1em",
         [theme.breakpoints.down("sm")] : {
             paddingTop : "3em" ,
@@ -96,9 +97,12 @@ const useStyles = makeStyles(theme => ({
         marginTop : "3rem",
         marginLeft : '3rem',
         marginRight : '3rem' ,
-        backgroundImage: `url(${revolutionBackground})`,
+        marginBottom : "3rem",
+        backgroundColor : theme.palette.common.gold,
+        borderRadius : "0rem" ,
+       // backgroundImage: `url(${revolutionBackground})`,
         [theme.breakpoints.down("sm")]: {
-            backgroundColor : "lightblue"
+            marginTop : "5rem"
         }
     },
     firstCard : {
@@ -153,8 +157,21 @@ const useStyles = makeStyles(theme => ({
         marginTop : "3rem",
         marginLeft : '3rem',
         marginRight : '3rem' ,
-        backgroundImage: `url(${revolutionBackground})`,
-        
+        backgroundImage: `url(${revolutionBackground})`,   
+    },
+    button : {
+       
+        fontSize : "2em" ,
+        backgroundColor : "white" ,
+        color : theme.palette.common.gross,
+        marginBottom : "2em",
+        "&:hover" : {
+            color : "white",
+            backgroundColor : theme.palette.common.gross
+        },
+        [theme.breakpoints.down("sm")]:{
+            fontSize : "1em"
+        }
     }
 }))
 
@@ -166,19 +183,23 @@ export default function About(props) {
 
     return (
         <React.Fragment>
+            
             <Grid container direction="column" alignItems="center" className={classes.mainContainer}>
-                
+            <Paper elevation={3} className={classes.paper}> 
                 <Grid item>
-                    <Typography variant="h2" style={{ fontSize : matchesSM ? "4rem" : undefined  , marginTop : matchesSM ? "4rem" : undefined}}>
+                    <Typography variant="h2" style={{ fontSize : matchesSM ? "4rem" : undefined  , 
+                    marginTop : matchesSM ? "4rem" : undefined,
+                    textAlign : "center" ,
+                    color : "white"}}>
                         About Myself
                     </Typography>
                 </Grid>
 
             <Grid item>
-            <Paper elevation={24} className={classes.paper} square="true">
-                <Grid container justify={matchesSM ? "center" : "space-between"} alignItems="center" >
+            {/* <Paper elevation={24} className={classes.paper} square="true"> */}
+                <Grid container direction={matchesSM ? "column" : "row"} justify={matchesSM ? "center" : "flex-start"} alignItems="center" >
 
-                <Grid item  justify="center" >
+                <Grid item   >
                     <Avatar alt="apoorva" variant="circle" src={apoorva} className={classes.apoorva}/>
                 </Grid>
 
@@ -233,21 +254,24 @@ export default function About(props) {
 
                     </Grid>      
                 </Grid>            
-            </Paper>
+            {/* </Paper> */}
             </Grid>  
 
             <Grid>
-            <Paper elevation={3} className={classes.paper} square="true">
-                <Grid container justify={matchesSM ? "center" : "space-between"} alignItems="center" >
+            {/* <Paper elevation={3} className={classes.paper} square="true"> */}
+                <Grid container justify={matchesSM ? "center" : "center"} alignItems="center" >
 
 
                     <Grid item className={classes.firstCard}>
+                            <Grid style={{ color : "white" , textAlign : "center"}}>
+                            <Typography variant="h3" className={classes.educationText}>
+                          Professional Summary
+                        </Typography>
+                            </Grid>
+
                     <Card className={classes.card}>
                         <CardContent>
                         <Grid item container direction="column" justify="center" alignItems="center">
-                        <Typography variant="h3" className={classes.educationText}>
-                          Professional Summary
-                        </Typography>
                         <Typography variant="body1" className={classes.educationText} paragraph>
                         Have 2 years & 10 months of experience in software development using Java, J2EE and
                         Javascript technologies.
@@ -263,32 +287,54 @@ export default function About(props) {
                     </Card>
                     </Grid>  
 
+                    
+
     
                 </Grid>            
-            </Paper>
+            {/* </Paper> */}
             </Grid> 
+
+            <Grid item className={classes.firstCard}>
+                            <Grid style={{ color : "white" , textAlign : "center"}}>
+                            <Typography variant="h3" className={classes.educationText}>
+                          Work History
+                        </Typography>
+                            </Grid>
+
+                    <Card className={classes.card}>
+                        <CardContent>
+                        
+                        </CardContent>
+                    </Card>
+                    </Grid> 
             
             <Grid item>
-            <Paper elevation={3} className={classes.paper}>
+            {/* <Paper elevation={3} className={classes.paper}> */}
                 <Grid container direction="column" justify="space-between" alignItems="center" >
 
-                    <Grid item>
-                    <Typography variant="h3" style={{ color : "black"}}>
-                          Education
-                        </Typography>
-                    </Grid>
+                    
 
                     <Grid item className={classes.firstCard}>
+
+                    <Grid item>
+                        <Typography variant="h3"  style={{ color : "white" , textAlign : "center"}}>
+                            Education
+                        </Typography>
+                    </Grid> 
+
                     <Card className={classes.card}>
                         <CardContent>
                             <Grid container direction={matchesSM ? "column" : "row"}
                              alignItems={matchesSM ? "center" : undefined} justify={matchesSM ? "center" : undefined}>
 
+
                             <Grid item style={{marginRight : matchesSM ? "2em" : undefined}}>
                                 <img className={classes.icon} alt="react" src={react} />
                             </Grid>
 
-                            <Grid item  style={{marginRight : matchesSM ? "2rem" : "10rem" , marginLeft : matchesSM ? "2rem" : "5rem"}}>
+                            <Grid item  style={{marginRight : matchesSM ? "2rem" : "5rem" , 
+                                                marginLeft : matchesSM ? "2rem" : "5rem",
+                                                marginBottom : matchesSM ? 0 : "2rem" }}>
                                     <Grid container direction="column"   alignItems="center">
                                         <Grid item>
                                             <Typography variant="h4" className={classes.educationText}>
@@ -304,9 +350,69 @@ export default function About(props) {
                                     </Grid> 
                             </Grid>
 
-                            <Grid item md>
+                            <Grid item md style={{marginBottom : matchesSM ? "3rem" : 0 }}>
                             <Typography variant="h4" className={classes.educationText}>
                                2011 - 2015
+                            </Typography>
+                            </Grid>
+                            </Grid>
+
+                            <Grid container direction={matchesSM ? "column" : "row"}
+                             alignItems={matchesSM ? "center" : undefined} justify={matchesSM ? "center" : undefined}>
+
+                            <Grid item style={{marginRight : matchesSM ? "2em" : undefined}}>
+                                <img className={classes.icon} alt="react" src={react} />
+                           </Grid>
+
+                            <Grid item  style={{marginRight : matchesSM ? "2rem" : "3.5rem" , 
+                                                marginLeft : matchesSM ? "2rem" : "5rem" ,
+                                                marginBottom : matchesSM ? 0 : "2rem"
+                                                }}>
+                                    <Grid container direction="column" alignItems="center">
+                                        <Grid item>
+                                            <Typography variant="h4" className={classes.educationText}>
+                                            PUC
+                                            </Typography>
+                                            <Typography variant="subtitle1" className={classes.educationText}>
+                                            PCMB (72.25%)
+                                            </Typography>
+                                            <Typography variant="subtitle1" className={classes.educationText}>
+                                            Sheshadripuram Composite PU College
+                                            </Typography>
+                                    </Grid>
+                                    </Grid> 
+                            </Grid>
+
+                            <Grid item md style={{marginBottom : matchesSM ? "3rem" : 0 }}>
+                            <Typography variant="h4" className={classes.educationText}>
+                               2009 - 2011
+                            </Typography>
+                            </Grid>
+                            </Grid>
+
+                            <Grid container direction={matchesSM ? "column" : "row"}
+                             alignItems={matchesSM ? "center" : undefined} justify={matchesSM ? "center" : undefined}>
+
+                            <Grid item style={{marginRight : matchesSM ? "2em" : undefined}}>
+                                <img className={classes.icon} alt="react" src={react} />
+                           </Grid>
+
+                            <Grid item  style={{marginRight : matchesSM ? "2rem" : "7.5rem" , marginLeft : matchesSM ? "2rem" : "5rem"}}>
+                                    <Grid container direction="column" alignItems="center">
+                                        <Grid item>
+                                            <Typography variant="h4" className={classes.educationText}>
+                                            SSLC
+                                            </Typography>
+                                            <Typography variant="subtitle1" className={classes.educationText}>
+                                            St. Mary's High School (90.40%)
+                                            </Typography>
+                                    </Grid>
+                                    </Grid> 
+                            </Grid>
+
+                            <Grid item md>
+                            <Typography variant="h4" className={classes.educationText}>
+                               2009
                             </Typography>
                             </Grid>
                             </Grid>
@@ -315,7 +421,7 @@ export default function About(props) {
                     </Card>
                     </Grid>  
 
-                    <Grid item className={classes.firstCard}>
+                    {/* <Grid item className={classes.firstCard}>
                     <Card className={classes.card}>
                         <CardContent>
                         <Grid container direction={matchesSM ? "column" : "row"}
@@ -350,9 +456,9 @@ export default function About(props) {
                         
                         </CardContent>
                     </Card>
-                    </Grid> 
+                    </Grid>  */}
 
-                    <Grid item className={classes.firstCard}>
+                    {/* <Grid item className={classes.firstCard}>
                     <Card className={classes.card}>
                         <CardContent>
                         <Grid container direction={matchesSM ? "column" : "row"}
@@ -384,36 +490,38 @@ export default function About(props) {
                         
                         </CardContent>
                     </Card>
-                    </Grid>
+                    </Grid> */}
    
                 </Grid>            
-            </Paper>
+            {/* </Paper> */}
             </Grid> 
 
             <Grid item >
-            <Paper elevation={3} className={classes.skillsPaper}>
+            {/* <Paper elevation={3} className={classes.skillsPaper}> */}
             
-                <Grid container direction="column" >
-                    <Grid item container direction="column" alignItems="center">
-                       <Typography variant="h3" style={{ color : "black" , marginTop : "1em"}}>
-                          Skills
-                        </Typography>
-                    </Grid>
+                <Grid container direction="column" alignItems="center">
+                   
 
                     <Grid item>
                     <Skills />
                     </Grid>
+
+                    
                 </Grid>
               
                         
-            </Paper>
+            {/* </Paper> */}
             </Grid>
-
+                
+            <Grid item container direction="column" alignItems="center">
+            <Grid item>
+                        <Button className={classes.button} variant="outlined">Click Here To Download CV</Button>
             </Grid>
-
-            <div >
-
-            </div>
+            </Grid>
+            
+            </Paper> 
+            </Grid>
+           
         </React.Fragment>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
-import { useMediaQuery , useTheme} from '@material-ui/core';
+import { useMediaQuery , useTheme, AppBar, Toolbar} from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     textContainer1 : {
@@ -16,6 +16,7 @@ const useStyles = makeStyles(theme => ({
     },
     textContainer2 : {
         color : "white",
+        textAlign : "center",
         [theme.breakpoints.down("sm")] : {
             alignItems : "center",
             fontSize : "3rem",
@@ -31,13 +32,12 @@ const useStyles = makeStyles(theme => ({
             fontSize : "1.4rem",
             marginTop : "1rem",
             marginBottom : "-1rem",
-            marginRight : "3rem",
+      
             textAlign : "center"
         }
     },
     gridItem : {
-        marginBottom : "1rem",
-        marginRight : '3rem'
+        marginBottom : "1rem"
     }
 }))
 
@@ -65,8 +65,9 @@ export default function Contact(props) {
 
 
                 <Grid item container direction={matchesSM ? "column" : "row"} style={{marginTop : matchesSM ? 0 : "3rem"}}>
-                    <Grid item container direction="column" alignItems={matchesSM ? "center" : "left"} justify="center" md style={{marginLeft : "2rem"}}>
-                        <Grid item className={classes.gridItem}>
+                    <Grid item container direction="column" alignItems={matchesSM ? "center" : undefined} 
+                    justify="center" md style={{marginLeft : matchesSM ? 0 :  "2rem"}}>
+                        <Grid item className={classes.gridItem}>    
                         <Typography variant="h3" className={classes.textContainer2} >
                             Contact Info
                         </Typography>
@@ -79,18 +80,35 @@ export default function Contact(props) {
                         </Typography>
                         </Grid>
 
-                        <Grid item className={classes.gridItem}>
-                        <Typography variant="body1" className={classes.textContainer3}>
-                            Address : 
-                            #646 Vithoba Nivas , 1st main , 4th cross , pipeline road 
-                            T.Dasarahalli , Bangalore-560057
-                        </Typography>
+                        <Grid item container direction={matchesSM ? "column" : "row"} className={classes.gridItem} >
+                            <Grid item style={{marginRight : "2em"}}>
+                                <Typography variant="body1" className={classes.textContainer3}>
+                                Address : 
+                                </Typography>
+                            </Grid>
+
+                            <Grid item md>
+                                <Typography variant="body1" className={classes.textContainer3}>
+                                #646 Vithoba Nivas , 1st main , 4th cross , pipeline road 
+                                T.Dasarahalli , Bangalore-560057
+                            </Typography>
+                            </Grid>
+                        
                         </Grid>
 
-                        <Grid item >
-                        <Typography variant="body1" className={classes.textContainer3}>
-                            Phone No : 8892510285
-                        </Typography>
+                        <Grid item container direction={matchesSM ? "column" : "row"} className={classes.gridItem} justify="flex-start">
+                            <Grid item style={{marginRight : "2em"}}>
+                                <Typography variant="body1" className={classes.textContainer3}>
+                                Phone : 
+                                </Typography>
+                            </Grid>
+
+                            <Grid item md>
+                                <Typography variant="body1" className={classes.textContainer3}>
+                                +91 8892510285
+                            </Typography>
+                            </Grid>
+                        
                         </Grid>
                     </Grid>
 

@@ -23,7 +23,8 @@ import revolutionBackground from "../assets/infoBackground.svg";
 
 const useStyles = makeStyles(theme => ({
     mainContainer: {
-        backgroundImage: `url(${revolutionBackground})`,
+        backgroundColor : theme.palette.common.gold,
+        //backgroundImage: `url(${revolutionBackground})`,
         [theme.breakpoints.down("sm")] : {
             backgroundColor : "transparent"
         }
@@ -88,6 +89,12 @@ export default function Skills(props) {
                 {/* First row start*/}
                 <Grid item className={classes.firstRow}>
                     <Grid container justify={matchesSM ? "center" : "space-between"} direction="row" className={classes.firstContainer}>
+
+                    <Grid item container direction="column" alignItems="center">
+                       <Typography variant="h3" style={{ color : "white" , marginTop : "1em"}}>
+                          Skills
+                        </Typography>
+                    </Grid>
 
                         <Grid item className={classes.firstItem}>
                             <Card className={classes.card}>
@@ -297,6 +304,28 @@ export default function Skills(props) {
                         </Grid>
 
                         
+
+                        <Grid item className={classes.firstItem}>
+                            <Card className={classes.card}>
+                                <CardContent>
+                                <Grid container direction="column" style={{textAlign : "center"}}>
+                                <Grid item>
+                                <img className={classes.icon} alt="nextJs" src={nextJs} />
+                                </Grid>
+                                <Grid item>
+                                    <Typography variant="h6">
+                                        Web Design
+                                    </Typography>
+                                </Grid>
+                                <Grid item>
+                                    <Typography variant="subtitle1">
+                                        Lorem ipsum
+                                    </Typography>
+                                </Grid>
+                                </Grid>
+                                </CardContent>
+                            </Card>
+                        </Grid>
 
                         <Grid item className={classes.firstItem}>
                             <Card className={classes.card}>

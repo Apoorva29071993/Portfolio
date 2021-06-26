@@ -122,7 +122,8 @@ function ElevationScroll(props) {
         }  
       },
       drawer : {
-          backgroundColor : theme.palette.common.gross
+          backgroundColor : theme.palette.common.gross,
+          marginTop : "2em"
       },
       drawerItem : {
           ...theme.typography.tab,
@@ -313,7 +314,9 @@ export default function Header(props) {
                 <img src={batman} alt="mylogo" className={classes.logo}/> 
                 </Button> 
 
-                <Typography variant="h2" className={classes.myname} color="secondary" style={{marginLeft : "10px" , marginBottom : "6px"}}>
+                {/* Using mediaquert change the marginleft to 5rem */}
+                <Typography variant="h2" className={classes.myname} color="secondary"
+                 style={{marginLeft : "2rem" , marginBottom : "6px"}}>
                  Portfolio
                 </Typography>
 

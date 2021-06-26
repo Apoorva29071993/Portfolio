@@ -11,7 +11,7 @@ import { useMediaQuery } from '@material-ui/core';
 import { useTheme } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
-    apoorva : {
+    apoorva1 : {
         height: "25em",
         width: "25em",
         marginTop : "2rem",
@@ -29,7 +29,6 @@ const useStyles = makeStyles(theme => ({
             width: "10em",
             maxHeight: 300,
             maxWidth: 300,
-            marginRight : "9rem",
             marginTop : "0.5em"
           }
     },
@@ -154,7 +153,7 @@ export default function Home(props){
                     </Grid>
 
                     <Grid item sm>
-                    <Avatar alt="apoorva" src={apoorva} className={classes.apoorva}/>
+                    <Avatar alt="apoorva1" src={apoorva} className={classes.apoorva1}/>
                     </Grid>
                 </Grid>
             </Grid>
