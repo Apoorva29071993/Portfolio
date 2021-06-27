@@ -23,7 +23,7 @@ import revolutionBackground from "../assets/infoBackground.svg";
 
 const useStyles = makeStyles(theme => ({
     mainContainer: {
-        backgroundColor : theme.palette.common.gold,
+        backgroundColor : "transparent",
         //backgroundImage: `url(${revolutionBackground})`,
         [theme.breakpoints.down("sm")] : {
             backgroundColor : "transparent"

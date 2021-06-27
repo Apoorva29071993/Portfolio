@@ -50,5 +50,27 @@ export default createMuiTheme({
         h6 : {
             color : "white"
         }
+    },
+    overrides : {
+        MuiInputLabel : {
+            root : {
+                color : "white" ,
+                fontSize : "1.2rem"
+            }
+        },
+        MuiInput : {
+            root : {
+                color : "white",
+                fontWeight : 300 
+            },
+            underline : {
+                "&:before" : {
+                    borderBottom: `2px solid ${Gold}`
+                },
+                "&:hover:not($disabled):not($focused):not($error):before" : {
+                    borderBottom: `2px solid ${Gold}`
+                }
+            }
+        }
     }
   });

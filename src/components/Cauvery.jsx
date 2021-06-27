@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
          } 
      },
      mainContainer : {
-         backgroundColor : "lightblue", 
+         backgroundColor : "red", 
      },
      heading : {
       textAlign : "center" ,
