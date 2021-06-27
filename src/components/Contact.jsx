@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
 import { useMediaQuery , useTheme, AppBar, Toolbar} from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
     textContainer1 : {
@@ -112,10 +113,18 @@ export default function Contact(props) {
                         </Grid>
                     </Grid>
 
-                    <Grid item md style={{ marginTop : matchesSM ? "3rem" : undefined}}>
+                    <Grid item container direction="column" md style={{ marginTop : matchesSM ? "3rem" : undefined}}>
+                        <Grid item>
                         <Typography variant="h3" className={classes.textContainer2}>
                             Form Page
                         </Typography>
+                        </Grid>
+
+                        <Grid item>
+                            
+                        </Grid>
+
+        
                     </Grid>
 
                 </Grid>

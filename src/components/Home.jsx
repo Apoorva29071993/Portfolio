@@ -25,8 +25,8 @@ const useStyles = makeStyles(theme => ({
           marginBottom : "3rem"
         },
         [theme.breakpoints.down("xs")]: {
-            height: "10em",
-            width: "10em",
+            height: "20em",
+            width: "20em",
             maxHeight: 300,
             maxWidth: 300,
             marginTop : "0.5em"
@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
             fontSize : "3rem" 
         },
         [theme.breakpoints.down("sm")] : {
-            marginTop : "3rem",
+            marginTop : "4rem",
             fontSize : "2.5rem" ,
             marginRight : "5rem"
         },
@@ -82,7 +82,9 @@ const useStyles = makeStyles(theme => ({
           minWidth : "21.5em" ,
           marginLeft : "1em",
           [theme.breakpoints.down("sm")] : {
-              marginLeft : "3rem",
+              marginLeft : "2rem",
+              minWidth : "30em",
+              marginBottom : "2em"
           }
       },
       viewButton : {

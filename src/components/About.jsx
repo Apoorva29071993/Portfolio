@@ -187,7 +187,9 @@ export default function About(props) {
             <Grid container direction="column" alignItems="center" className={classes.mainContainer}>
             <Paper elevation={3} className={classes.paper}> 
                 <Grid item>
-                    <Typography variant="h2" style={{ fontSize : matchesSM ? "4rem" : undefined  , 
+                    <Typography variant="h2" 
+                    style={{ fontSize : matchesSM ? "3rem" : undefined  , 
+                    minWidth : matchesSM ? "25rem" : 0 ,
                     marginTop : matchesSM ? "4rem" : undefined,
                     textAlign : "center" ,
                     color : "white"}}>

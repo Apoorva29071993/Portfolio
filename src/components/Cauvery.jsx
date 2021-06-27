@@ -19,11 +19,15 @@ const useStyles = makeStyles(theme => ({
      carousel : {
         marginTop : "2em",
         [theme.breakpoints.down("sm")] : {
-            marginTop : "4em"
+            marginTop : "8em"
          } 
      },
      mainContainer : {
          backgroundColor : "lightblue", 
+     },
+     heading : {
+      textAlign : "center" ,
+      fontSize : "4em"
      }
 }));
 
@@ -55,7 +59,7 @@ export default function Cauvery(props) {
                 </Grid>
 
                 <Grid item style={{marginTop : "2em"}}>
-                <Typography variant="h2" style={{  textAlign : "center"}}>
+                <Typography variant="h2" className={classes.heading}>
                           Cauvery Enterprises
                 </Typography>
                 </Grid>
