@@ -9,7 +9,11 @@ import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import react from '../assets/react1.svg';
-import redux from '../assets/redux.svg';
+import mechanical from '../assets/mechanical1.svg';
+import school from '../assets/school1.svg';
+import twelve from '../assets/twelve.svg';
+import programmer from '../assets/programmer.svg';
+import workstation from '../assets/workstation.svg';
 import Paper from '@material-ui/core/Paper';
 import Skills from '../components/Skills';
 import { useMediaQuery } from '@material-ui/core';
@@ -69,7 +73,7 @@ const useStyles = makeStyles(theme => ({
         marginLeft : "2em",
         height : '5em',
         width : "5em",
-        borderRadius : "4em",
+        //borderRadius : "4em",
         [theme.breakpoints.down("xs")] : {
             marginRight : 0
         }
@@ -150,7 +154,8 @@ const useStyles = makeStyles(theme => ({
     educationText : {
         color : "white" , 
         [theme.breakpoints.down("sm")]:{
-            textAlign : "center"
+            textAlign : "center",
+            fontSize : "1rem"
         }
     },
     skillsPaper : {
@@ -303,9 +308,99 @@ export default function About(props) {
                         </Typography>
                             </Grid>
 
+                            
+
                     <Card className={classes.card}>
                         <CardContent>
                         
+                            <Grid container direction={matchesSM ? "column" : "row"}
+                             alignItems={matchesSM ? "center" : undefined} justify={matchesSM ? "center" : undefined}>
+
+
+                            <Grid item  style={{marginRight : matchesSM ? "2rem" : "5rem" , 
+                                                marginLeft : matchesSM ? "2rem" : "5rem",
+                                                marginBottom : matchesSM ? 0 : "2rem" }}>
+                                    <Grid container direction="column"   alignItems="center">
+
+                                        
+                        <Grid item style={{marginLeft : matchesSM ? "-2em" : "3em"}}>
+                                <img className={classes.icon} alt="programmer" src={programmer} />
+                            </Grid>
+                                        <Grid item>
+                                            <Typography variant="h4" className={classes.educationText}>
+                                            Software Engineer
+                                            </Typography>
+                                            <Typography variant="h4" className={classes.educationText}>
+                                            Imonitor Solutions (Bangalore, India)
+                                            </Typography>
+                                            <Typography variant="h4" className={classes.educationText} >
+                                            Sep 2017 - July 2019
+                                            </Typography>
+                                            <Typography variant="subtitle1" className={classes.educationText}>
+                                            Project Name : Home Automation
+                                            </Typography>
+                                            <Typography variant="body1" className={classes.educationText} paragraph>
+                                            I have developed and tested UI, APIs, status, alerts, alarms, device configurations &
+                                            control functionalities on IOT devices like AC, Dimmer, Security Systems, Switches,
+                                            Dimmers, Cameras, LCD Remotes etc.
+                                          </Typography>
+
+                                          <Typography variant="subtitle1" className={classes.educationText}>
+                                            Project Name : Alexa & Google Home
+                                            </Typography>
+                                            <Typography variant="body1" className={classes.educationText} paragraph>
+                                            Implemented smart home speech to text conversions for Alexa and Google Home device
+                                            using Node API and restful web services.
+                                          </Typography>
+                                      </Grid>
+                                      
+                                    
+                                    <Grid item>
+                                    <Typography variant="h4" className={classes.educationText} >
+                                           -----------------------------------------------------------------------------------------------------------------------
+
+                                    </Typography>
+                                    </Grid>
+
+                                    <Grid item style={{marginLeft : matchesSM ? "-2em" : "3em"}}>
+                                <img className={classes.icon} alt="workstation" src={workstation} />
+                                   </Grid>
+
+                                      <Grid item>
+                                            <Typography variant="h4" className={classes.educationText}>
+                                            Graduate Apprentice Trainee
+                                            </Typography>
+                                            <Typography variant="h4" className={classes.educationText}>
+                                            Bharat Electronics Ltd. (Bangalore, India)
+                                            </Typography>
+                                            <Typography variant="h4" className={classes.educationText} >
+                                            Feb 2016 - Feb 2017
+                                            </Typography>
+                                            <Typography variant="subtitle1" className={classes.educationText}>
+                                            Project Name : Human Resource Information System
+                                            </Typography>
+                                            <Typography variant="body1" className={classes.educationText} paragraph>
+                                            Developed UI and backend functionalities to retrieve attendance, payroll, identification
+                                            and other details for a given period of time using Java, Struts and HTML.
+                                          </Typography>
+
+                                          <Typography variant="subtitle1" className={classes.educationText}>
+                                            Project Name : Food Order Management System
+                                            </Typography>
+                                            <Typography variant="body1" className={classes.educationText} paragraph>
+                                            Developed a food order management application in integration with the premises canteen
+                                            exclusively for the company staff.
+                                          </Typography>
+                                      </Grid>
+
+                                      
+                                    </Grid> 
+                            </Grid>
+
+                        
+
+
+                            </Grid>     
                         </CardContent>
                     </Card>
                     </Grid> 
@@ -331,7 +426,7 @@ export default function About(props) {
 
 
                             <Grid item style={{marginRight : matchesSM ? "2em" : undefined}}>
-                                <img className={classes.icon} alt="react" src={react} />
+                                <img className={classes.icon} alt="mechanical" src={mechanical} />
                             </Grid>
 
                             <Grid item  style={{marginRight : matchesSM ? "2rem" : "5rem" , 
@@ -363,7 +458,7 @@ export default function About(props) {
                              alignItems={matchesSM ? "center" : undefined} justify={matchesSM ? "center" : undefined}>
 
                             <Grid item style={{marginRight : matchesSM ? "2em" : undefined}}>
-                                <img className={classes.icon} alt="react" src={react} />
+                                <img className={classes.icon} alt="twelve" src={twelve} />
                            </Grid>
 
                             <Grid item  style={{marginRight : matchesSM ? "2rem" : "3.5rem" , 
@@ -396,7 +491,7 @@ export default function About(props) {
                              alignItems={matchesSM ? "center" : undefined} justify={matchesSM ? "center" : undefined}>
 
                             <Grid item style={{marginRight : matchesSM ? "2em" : undefined}}>
-                                <img className={classes.icon} alt="react" src={react} />
+                                <img className={classes.icon} alt="school" src={school} />
                            </Grid>
 
                             <Grid item  style={{marginRight : matchesSM ? "2rem" : "7.5rem" , marginLeft : matchesSM ? "2rem" : "5rem"}}>
