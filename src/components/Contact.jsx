@@ -9,10 +9,14 @@ import emailIcon from '../assets/email.svg';
 import locationIcon from '../assets/location2.svg';
 import { useState } from 'react';
 import Button from "@material-ui/core/Button";
+import axios from 'axios';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Snackbar from '@material-ui/core/Snackbar';
+import ReactGA from "react-ga";
 
 const useStyles = makeStyles(theme => ({
     textContainer1 : {
-        color : "white",
+        color : "black",
         fontSize : "3rem",
         [theme.breakpoints.down("sm")] : {
             alignItems : "center",
@@ -21,7 +25,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     textContainer2 : {
-        color : "white",
+        color : "black",
         textAlign : "center",
         [theme.breakpoints.down("sm")] : {
             alignItems : "center",
@@ -32,12 +36,12 @@ const useStyles = makeStyles(theme => ({
         }
     },
     textContainer3 : {
-        color : "white",
+        color : "black",
         fontSize : "1.2rem",
         [theme.breakpoints.down("sm")] : {
             fontSize : "1.4rem",
            // marginTop : "1rem",
-            marginBottom : "-1rem",
+           // marginBottom : "-1rem",
       
             textAlign : "center"
         }
@@ -55,7 +59,7 @@ const useStyles = makeStyles(theme => ({
         height : 45 ,
         width : 245 ,
         fontSize : "1rem" ,
-        color : "white" ,
+        color : "black" ,
         backgroundColor : theme.palette.common.gold,
         "&:hover" : {
             backgroundColor : "white",
@@ -69,13 +73,114 @@ export default function Contact(props) {
     const theme = useTheme();
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
     const [name , setName] = useState("");
+
     const [email , setEmail] = useState("");
+    const [emailHelper , setEmailHelper] = useState("");
+
     const [phone , setPhone] = useState("");
+    const [phoneHelper , setPhoneHelper] = useState("");
+
     const [message , setMessage] = useState("");
+
+    const [loading , setLoading] = useState(false);
+
+    const [alert , setAlert] = useState({
+        open : false ,
+        message : "" ,
+        backgroundColor : ""
+    })
+
+    const [alertMessage , setAlertMessage] = useState("");
+
+
+    const onChange = event => {
+        let valid ;
+
+        switch(event.target.id) {
+            case "email" : {
+                setEmail(event.target.value)
+                valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+                .test(event.target.value)
+
+                if (!valid) {
+                    setEmailHelper("Invalid Email")
+                }
+                else {
+                    setEmailHelper("")
+                }
+
+                break;
+            }
+
+            case "phone" : {
+                setPhone(event.target.value);
+                valid = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+                .test(event.target.value)
+
+                if (!valid) {
+                    setPhoneHelper("Invalid Phone Number")
+                }
+                else {
+                    setPhoneHelper("")
+                }
+                break;
+            }
+
+            default : break;    
+
+        }
+    }
+
+    const onConfirm = () => {
+        setLoading(true);
+    ReactGA.event({
+      category: "Message",
+      action: "Sent Message"
+    });
+    console.log("Calling 1 ");
+    
+    console.log(name + email + phone + message);
+    axios({
+      url : 'http://localhost:3100/contactsave',
+      method : 'post' ,
+      data : {
+        name: name,
+        email: email,
+        phone: phone,
+        message: message
+      }})
+      .then(res => {
+        setLoading(false);
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+        setAlert({
+          open: true,
+          backgroundColor: "#4BB543"
+        });
+        setAlertMessage("Contact Data saved successfully into Database!");
+      })
+      .catch(err => {
+        setLoading(false);
+        setAlert({
+          open: true,
+          backgroundColor: "#FF3232"
+        });
+        setAlertMessage("Something went wrong, please try again!");
+        console.log(err);
+      });
+      };
+
+      const buttonContents = (
+          <React.Fragment>
+            Send Message
+          </React.Fragment>
+      )
 
     return (
         <React.Fragment>
-            <Grid container direction="column" alignItems="center" style={{backgroundColor : "red"}}>
+            <Grid container direction="column" alignItems="center" style={{backgroundColor : "white"}}>
 
                 <Grid item container direction="column" alignItems="center" justify="center">
                     <Grid item >
@@ -107,34 +212,32 @@ export default function Contact(props) {
                         </Typography>
                         </Grid>
 
-                        <Grid item container direction={matchesSM ? "column" : "row"} className={classes.gridItem} >
+                        <Grid item container direction="row" className={classes.gridItem} >
                             <Grid item >
-                                
-                                <img alt="location" src={emailIcon} 
+                                <img alt="location" src={emailIcon}  
                                 style={{marginRight : "1em" ,
-                                        marginLeft : matchesSM ? "50%" : 0 ,
-                                        verticalAlign : "bottom"}} />
-                                
+                                        marginLeft : matchesSM ? "5em" : 0 ,
+                                       verticalAlign : "bottom"}} />
                             </Grid>
 
                             <Grid item >
                                 <Typography variant="body1" className={classes.textContainer3}>
-                                apoorva.jakati@gmail.com
+                               <a style={{textDecoration : "none" , color : "inherit"}} href="mailto:apoorva.jakati@gmail.com"> apoorva.jakati@gmail.com</a>
                             </Typography>
                             </Grid>
                         
                         </Grid>
 
-                        <Grid item container direction={matchesSM ? "column" : "row"} className={classes.gridItem} justify="flex-start">
-                            <Grid item >
-                                
-                                <img alt="phone" src={phoneIcon} style={{marginRight : "1em" , marginLeft : matchesSM ? "50%" : 0}}/>
-                                
+                        <Grid item container direction="row" className={classes.gridItem} justify="flex-start">
+                            <Grid item > 
+                                <img alt="phone" src={phoneIcon} 
+                                style={{marginRight : "1em" ,
+                                 marginLeft : matchesSM ? "7em" : 0}}/> 
                             </Grid>
 
                             <Grid item >
                                 <Typography variant="body1" className={classes.textContainer3}>
-                                +91 8892510285
+                                <a style={{textDecoration : "none" , color : "inherit"}} href="tel:8892510285">+91 8892510285 </a>
                             </Typography>
                             </Grid>
                         
@@ -157,13 +260,19 @@ export default function Contact(props) {
                             </Grid>
 
                             <Grid item style={{marginBottom : "0.5em"}}>
-                            <TextField label="Email" id="email" fullWidth value={email}
-                            onChange={event => setEmail(event.target.value)}/>
+                            <TextField label="Email" id="email" 
+                            error={emailHelper.length !== 0 }
+                            helperText={emailHelper}
+                            fullWidth value={email}
+                            onChange={onChange}/>
                             </Grid>
 
                             <Grid item style={{marginBottom : "0.5em"}}>
-                            <TextField label="Phone" id="phone" fullWidth value={phone}
-                            onChange={event => setPhone(event.target.value)}/>
+                            <TextField label="Phone" id="phone" 
+                            error={phoneHelper.length !== 0 }
+                            helperText={phoneHelper}
+                            fullWidth value={phone}
+                            onChange={onChange}/>
                             </Grid>
                         </Grid>
 
@@ -176,7 +285,19 @@ export default function Contact(props) {
                         </Grid>
 
                         <Grid item container justify="center" style={{marginTop : "2em" , marginBottom : "2em"}}>
-                            <Button variant="contained" className={classes.sendButton}>Send Message</Button>
+                            <Button variant="contained" 
+                            disabled={ 
+                                name.length === 0 || 
+                                message.length === 0 ||
+                                phoneHelper.length !== 0 || 
+                                email.length === 0 ||
+                                emailHelper.length !== 0 }
+                            className={classes.sendButton}
+                            onClick={onConfirm} >
+                               {loading ? <CircularProgress size={30}/> : buttonContents}
+                            </Button>
+
+
                         </Grid>
                             </Grid>
                         </Grid>
@@ -187,8 +308,14 @@ export default function Contact(props) {
 
                 </Grid>
 
-
             </Grid>
+
+             <Snackbar open={alert.open} message={alertMessage} 
+             ContentProps={{style : {backgroundColor : alert.backgroundColor}}}  
+             anchorOrigin={{vertical : "top" , horizontal: "center"}}
+             onClose={() => setAlert({...alert , open : false})}     
+             autoHideDuration={4000} />            
+
         </React.Fragment>
     )
 }

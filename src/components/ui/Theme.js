@@ -54,13 +54,13 @@ export default createMuiTheme({
     overrides : {
         MuiInputLabel : {
             root : {
-                color : "white" ,
+                color : "black" ,
                 fontSize : "1.2rem"
             }
         },
         MuiInput : {
             root : {
-                color : "white",
+                color : "black",
                 fontWeight : 300 
             },
             underline : {
