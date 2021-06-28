@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
             width: "10em",
             maxHeight: 300,
             maxWidth: 300,
-            marginRight : "5rem",
+            marginRight : "1rem",
             marginTop : "0.5em",
           }
     } ,
@@ -90,6 +90,15 @@ const useStyles = makeStyles(theme => ({
             paddingRight : 0,
             //borderRadius : "25%",
             width : "100%"
+        },
+        [theme.breakpoints.down("xs")] : {
+            paddingTop : "0" ,
+            paddingBottom : "0",
+            paddingLeft : "0.5em",
+            paddingRight : "0.5em",
+            marginLeft : "2em",
+            //borderRadius : "25%",
+            width : "75%"
         }
     },
     summary : {
@@ -106,14 +115,24 @@ const useStyles = makeStyles(theme => ({
         borderRadius : "0rem" ,
        // backgroundImage: `url(${revolutionBackground})`,
         [theme.breakpoints.down("sm")]: {
-            marginTop : "5rem"
+            //marginTop : "5rem",
+            marginRight : 0,
+            marginLeft : 0
+        },
+        [theme.breakpoints.down("xs")]: {
+            marginRight : 0,
+            marginLeft : "-4rem",
         }
     },
     firstCard : {
         marginTop : "3rem",
         marginLeft : "2rem",
         marginBottom : "3rem",
-        marginRight : "2rem"
+        marginRight : "2rem",
+        [theme.breakpoints.down("xs")]: {
+            marginRight : 0,
+            marginLeft : "5rem"
+        }
     },
     secondCard : {
         marginRight : "5rem"
@@ -174,8 +193,9 @@ const useStyles = makeStyles(theme => ({
             color : "white",
             backgroundColor : theme.palette.common.gross
         },
-        [theme.breakpoints.down("sm")]:{
-            fontSize : "1em"
+        [theme.breakpoints.down("xs")]:{
+            fontSize : "1em",
+            marginLeft : "4em"
         }
     }
 }))
@@ -185,16 +205,18 @@ export default function About(props) {
     const classes = useStyles();
     const theme = useTheme();
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+    const matchesXS = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
         <React.Fragment>
             
-            <Grid container direction="column" alignItems="center" className={classes.mainContainer}>
+            <Grid container direction="column" alignItems="center" justify="center" className={classes.mainContainer}>
             <Paper elevation={3} className={classes.paper}> 
                 <Grid item>
                     <Typography variant="h2" 
                     style={{ fontSize : matchesSM ? "3rem" : undefined  , 
-                    minWidth : matchesSM ? "25rem" : 0 ,
+                    //minWidth : matchesXS ? "10rem" : 0 ,
+                    marginLeft : matchesSM ? "4rem" : undefined,
                     marginTop : matchesSM ? "4rem" : undefined,
                     textAlign : "center" ,
                     color : "white"}}>
@@ -204,7 +226,10 @@ export default function About(props) {
 
             <Grid item>
             {/* <Paper elevation={24} className={classes.paper} square="true"> */}
-                <Grid container direction={matchesSM ? "column" : "row"} justify={matchesSM ? "center" : "flex-start"} alignItems="center" >
+                <Grid container 
+                direction={matchesXS ? "column" : "row"} 
+                justify={matchesXS ? "center" : "flex-start"} 
+                alignItems="center" >
 
                 <Grid item   >
                     <Avatar alt="apoorva" variant="circle" src={apoorva} className={classes.apoorva}/>
@@ -266,7 +291,7 @@ export default function About(props) {
 
             <Grid>
             {/* <Paper elevation={3} className={classes.paper} square="true"> */}
-                <Grid container justify={matchesSM ? "center" : "center"} alignItems="center" >
+                <Grid container justify={matchesXS ? "center" : "center"} alignItems="center" >
 
 
                     <Grid item className={classes.firstCard}>

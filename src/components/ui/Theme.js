@@ -54,21 +54,21 @@ export default createMuiTheme({
     overrides : {
         MuiInputLabel : {
             root : {
-                color : "black" ,
+                color : "white" ,
                 fontSize : "1.2rem"
             }
         },
         MuiInput : {
             root : {
-                color : "black",
+                color : "white",
                 fontWeight : 300 
             },
             underline : {
                 "&:before" : {
-                    borderBottom: `2px solid ${Gold}`
+                    borderBottom: `2px solid ${White}`
                 },
                 "&:hover:not($disabled):not($focused):not($error):before" : {
-                    borderBottom: `2px solid ${Gold}`
+                    borderBottom: `2px solid ${White}`
                 }
             }
         }

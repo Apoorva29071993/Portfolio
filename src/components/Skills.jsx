@@ -27,12 +27,16 @@ const useStyles = makeStyles(theme => ({
         //backgroundImage: `url(${revolutionBackground})`,
         [theme.breakpoints.down("sm")] : {
             backgroundColor : "transparent"
+        },
+        [theme.breakpoints.down("xs")] : {
+            backgroundColor : "transparent",
+            //marginLeft : "2em"
         }
     },
     firstContainer: {
         marginTop : "5em",
         [theme.breakpoints.down("sm")] : {
-            marginTop : "2em"
+            marginTop : "2em",
         }
     },
     card : {
@@ -47,14 +51,30 @@ const useStyles = makeStyles(theme => ({
             paddingRight : 0,
             borderRadius : 0,
             width : "100%"
+        },
+        [theme.breakpoints.down("xs")] : {
+            paddingTop : 0 ,
+            paddingBottom : 0,
+            paddingLeft : 0,
+            paddingRight : 0,
+            borderRadius : 0,
+            width : "100%"
         }
     },
     firstItem : {
-        marginRight : "2rem",
-        [theme.breakpoints.down("sm")] : {
-            marginBottom : "2em"
+       // marginRight : "2rem",
+        [theme.breakpoints.down("xs")] : {
+            marginBottom : "2em",
+            marginLeft : "2em"
         }
     },
+    SecondItem : {
+        // marginRight : "2rem",
+         [theme.breakpoints.down("xs")] : {
+             marginBottom : "2em",
+             marginLeft : "2em"
+         }
+     },
     firstRow : {
         marginLeft : "2em",
         [theme.breakpoints.down("sm")] : {
@@ -118,7 +138,7 @@ export default function Skills(props) {
                             </Card>
                         </Grid>
 
-                        <Grid item className={classes.firstItem}>
+                        <Grid item className={classes.SecondItem}>
                             <Card className={classes.card}>
                                 <CardContent>
                                 <Grid container direction="column" style={{textAlign : "center"}}>
@@ -206,7 +226,7 @@ export default function Skills(props) {
                             </Card>
                         </Grid>
 
-                        <Grid item className={classes.firstRowLastItem}>
+                        <Grid item className={classes.firstItem}>
                             <Card className={classes.card}>
                                 <CardContent>
                                 <Grid container direction="column" style={{textAlign : "center"}}>
@@ -233,7 +253,7 @@ export default function Skills(props) {
 
                 {/* Second row start*/}
                 <Grid item className={classes.firstRow} >
-                    <Grid container justify="space-between" direction={matchesSM ? "column" : "row"} className={classes.firstContainer}>
+                    <Grid container justify={ matchesSM ? "center" : "space-between"} direction="row" className={classes.firstContainer}>
 
                         
 
@@ -349,7 +369,7 @@ export default function Skills(props) {
                             </Card>
                         </Grid>
 
-                        <Grid item className={classes.firstRowLastItem} style={{marginBottom : "3em"}}>
+                        <Grid item className={classes.firstItem} style={{marginBottom : "3em"}}>
                             <Card className={classes.card}>
                                 <CardContent>
                                 <Grid container direction="column" style={{textAlign : "center"}}>

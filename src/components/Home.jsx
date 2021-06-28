@@ -29,7 +29,8 @@ const useStyles = makeStyles(theme => ({
             width: "20em",
             maxHeight: 300,
             maxWidth: 300,
-            marginTop : "0.5em"
+            marginTop : "0.5em",
+           // marginLeft : "-2rem"
           }
     },
     mainContainer : {
@@ -53,7 +54,7 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down("xs")] : {
             marginTop : "3rem",
             fontSize : "2rem" ,
-            marginRight : "5rem"
+            marginRight : "2rem"
         }
       },
       button : {
@@ -69,12 +70,14 @@ const useStyles = makeStyles(theme => ({
             color : theme.palette.common.gold
           },
           [theme.breakpoints.down("xs")] : {
-            marginRight : "4rem",
+            marginRight : "2rem",
             height : 35 ,
           width : 105 
           },
           [theme.breakpoints.down("sm")] : {
-            marginRight : "4rem",
+            marginRight : "1rem",
+            marginTop : "1rem",
+            marginBottom : "1rem" ,
             fontSize : "0.85rem"
         }
       },
@@ -85,7 +88,12 @@ const useStyles = makeStyles(theme => ({
               marginLeft : "2rem",
               minWidth : "30em",
               marginBottom : "2em"
-          }
+          },
+          [theme.breakpoints.down("xs")] : {
+            marginLeft : "-1rem",
+            minWidth : "30em",
+            marginBottom : "2em"
+        }
       },
       viewButton : {
         color : "white",
@@ -121,6 +129,11 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down("sm")] : {
             padding : 25
         }
+    },
+    insideContainer : {
+        [theme.breakpoints.down("xs")] : {
+            marginRight: 0
+        }
     }
 }))
 
@@ -129,6 +142,7 @@ export default function Home(props){
     const classes = useStyles();
     const theme = useTheme();
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+    const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
     return (
         <React.Fragment>
@@ -136,9 +150,9 @@ export default function Home(props){
 
         <Grid container direction="column" className={classes.mainContainer}>
             <Grid item >
-                <Grid container direction={matchesSM ? "column" : "row"} justify="flex-end" alignItems="center">
+                <Grid container direction={matchesXS ? "column" : "row"}  justify="flex-end" alignItems="center">
 
-                    <Grid item sm className={classes.TextContainer}>
+                    <Grid item sm >
                         <Typography variant="h3" align="center" className={classes.details}>
                                     Hello, I'm <br/>
                                     Apoorva A. Jakati <br/>

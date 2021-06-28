@@ -48,7 +48,8 @@ function ElevationScroll(props) {
             marginBottom : "2em"
         },
         [theme.breakpoints.down("xs")] : {
-            marginBottom : "1.25rem"
+            marginBottom : "1.25rem",
+            marginRight : "5rem"
         }
       },
       logo : {
@@ -99,16 +100,20 @@ function ElevationScroll(props) {
               opacity : 1
           }
       },
-      myname : {
+      portfolio : {
         fontFamily : 'Viaoda Libre',
             fontSize : "4rem" ,
+            marginLeft : "2rem" , 
+            marginBottom : "6px",
         [theme.breakpoints.down("md")] : {
             height : "6rem",
             fontSize : "3.5rem" 
         },
         [theme.breakpoints.down("xs")] : {
             height : "5rem",
-            fontSize : "2.75rem" 
+            fontSize : "2.75rem" ,
+            marginLeft : "0.2rem",
+            marginTop : "2rem"
         }
       },
       drawerIcon : {
@@ -123,7 +128,7 @@ function ElevationScroll(props) {
       },
       drawer : {
           backgroundColor : theme.palette.common.gross,
-          marginTop : "2em"
+          marginTop : "3em"
       },
       drawerItem : {
           ...theme.typography.tab,
@@ -315,8 +320,8 @@ export default function Header(props) {
                 </Button> 
 
                 {/* Using mediaquert change the marginleft to 5rem */}
-                <Typography variant="h2" className={classes.myname} color="secondary"
-                 style={{marginLeft : "2rem" , marginBottom : "6px"}}>
+                <Typography variant="h2" className={classes.portfolio} color="secondary"
+                 >
                  Portfolio
                 </Typography>
 

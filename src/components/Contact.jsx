@@ -22,6 +22,11 @@ const useStyles = makeStyles(theme => ({
             alignItems : "center",
             marginTop : "2rem",
             fontSize : "1.5rem",
+        },
+        [theme.breakpoints.down("xs")] : {
+            alignItems : "center",
+            marginTop : "4rem",
+            fontSize : "1.5rem",
         }
     },
     textContainer2 : {
@@ -44,10 +49,16 @@ const useStyles = makeStyles(theme => ({
            // marginBottom : "-1rem",
       
             textAlign : "center"
+        },
+        [theme.breakpoints.down("xs")] : {
+            fontSize : "1.53rem",
         }
     },
     gridItem : {
-        marginBottom : "1rem"
+        marginBottom : "1rem",
+        [theme.breakpoints.down("xs")] : {
+            
+        }
     },
     message : {
         border: `2px solid ${theme.palette.common.gold}`,
@@ -72,6 +83,7 @@ export default function Contact(props) {
     const classes = useStyles();
     const theme = useTheme();
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+    const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
     const [name , setName] = useState("");
 
     const [email , setEmail] = useState("");
@@ -180,7 +192,7 @@ export default function Contact(props) {
 
     return (
         <React.Fragment>
-            <Grid container direction="column" alignItems="center" style={{backgroundColor : "white"}}>
+            <Grid container direction="column" alignItems="center" style={{backgroundColor : theme.palette.common.gold}}>
 
                 <Grid item container direction="column" alignItems="center" justify="center">
                     <Grid item >
@@ -216,7 +228,7 @@ export default function Contact(props) {
                             <Grid item >
                                 <img alt="location" src={emailIcon}  
                                 style={{marginRight : "1em" ,
-                                        marginLeft : matchesSM ? "5em" : 0 ,
+                                        marginLeft : matchesXS ? "1em" : 0 ,
                                        verticalAlign : "bottom"}} />
                             </Grid>
 
@@ -232,7 +244,8 @@ export default function Contact(props) {
                             <Grid item > 
                                 <img alt="phone" src={phoneIcon} 
                                 style={{marginRight : "1em" ,
-                                 marginLeft : matchesSM ? "7em" : 0}}/> 
+                                 marginLeft : matchesXS ? "3em" : 0,
+                                 marginTop : matchesXS ? "1em" : 0}}/> 
                             </Grid>
 
                             <Grid item >
