@@ -45,7 +45,7 @@ export default createMuiTheme({
         h3 : {
             fontFamily : "Indie Flower",
             fontSize : "2rem" ,
-            color : `${Gold}`,
+            color : `${White}`,
             fontWeight : 700
         },
         subtitle1 : {

@@ -113,7 +113,7 @@ const useStyles = makeStyles(theme => ({
         marginLeft : '3rem',
         marginRight : '3rem' ,
         marginBottom : "3rem",
-        backgroundColor : "#fc4c3f",
+        backgroundColor : "#20c9a2",
         borderRadius : "0rem" ,
        // backgroundImage: `url(${revolutionBackground})`,
         [theme.breakpoints.down("sm")]: {
@@ -177,7 +177,7 @@ const useStyles = makeStyles(theme => ({
     bodyText : {
         color : "grey" , 
         fontSize : "1.5rem" ,
-        fontFamily : "Dancing Script",
+        fontFamily : "Viaoda Libre",
         fontWeight : "700",
         [theme.breakpoints.down("xs")]:{
             textAlign : "center",
