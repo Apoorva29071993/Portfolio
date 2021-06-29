@@ -27,8 +27,8 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down("xs")]: {
             height: "20em",
             width: "20em",
-            maxHeight: 300,
-            maxWidth: 300,
+            maxHeight: 200,
+            maxWidth: 200,
             marginTop : "0.5em",
            // marginLeft : "-2rem"
           }
@@ -53,8 +53,8 @@ const useStyles = makeStyles(theme => ({
         },
         [theme.breakpoints.down("xs")] : {
             marginTop : "3rem",
-            fontSize : "2rem" ,
-            marginRight : "2rem"
+            fontSize : "1.8rem" ,
+            marginRight : "1rem"
         }
       },
       button : {
@@ -71,6 +71,7 @@ const useStyles = makeStyles(theme => ({
           },
           [theme.breakpoints.down("xs")] : {
             marginRight : "2rem",
+            marginLeft : "1rem" ,
             height : 35 ,
           width : 105 
           },
@@ -155,7 +156,7 @@ export default function Home(props){
                     <Grid item sm >
                         <Typography variant="h3" align="center" className={classes.details}>
                                     Hello, I'm <br/>
-                                    Apoorva A. Jakati <br/>
+                                    Mr. Apoorva A. Jakati <br/>
                                     I'm a Full Stack Web Developer
                         </Typography>
                     <Grid container justify="center">

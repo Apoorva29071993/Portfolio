@@ -60,7 +60,7 @@ function ElevationScroll(props) {
               height : "6rem"
           },
           [theme.breakpoints.down("xs")] : {
-              height : "5rem"
+              height : "4rem"
           }
       },
       tabContainer : {
