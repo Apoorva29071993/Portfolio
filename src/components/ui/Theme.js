@@ -42,6 +42,12 @@ export default createMuiTheme({
             color : `${Gold}`,
             fontWeight : 700
         },
+        h3 : {
+            fontFamily : "Arial",
+            fontSize : "2rem" ,
+            color : `${Gold}`,
+            fontWeight : 700
+        },
         subtitle1 : {
             fontSize : "1.25rem",
             fontWeight : 300,

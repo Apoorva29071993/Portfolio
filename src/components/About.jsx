@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
         width: "15em",
         marginTop : "2rem",
         marginBottom : "2rem",
-        marginLeft : "5rem",
+        marginLeft : "15rem",
         marginRight : "10rem",
         [theme.breakpoints.down("sm")]: {
           height: "10em",
@@ -43,6 +43,7 @@ const useStyles = makeStyles(theme => ({
             maxHeight: 300,
             maxWidth: 300,
             marginRight : "1rem",
+            marginLeft : "5rem",
             marginTop : "0.5em",
           }
     } ,
@@ -96,9 +97,9 @@ const useStyles = makeStyles(theme => ({
             paddingBottom : "0",
             paddingLeft : "0.5em",
             paddingRight : "0.5em",
-            marginLeft : "2em",
+            marginLeft : "1.2em",
             //borderRadius : "25%",
-            width : "75%"
+            width : "80%"
         }
     },
     summary : {
@@ -122,6 +123,7 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down("xs")]: {
             marginRight : 0,
             marginLeft : "-4rem",
+            marginTop : 0
         }
     },
     firstCard : {
@@ -130,6 +132,7 @@ const useStyles = makeStyles(theme => ({
         marginBottom : "3rem",
         marginRight : "2rem",
         [theme.breakpoints.down("xs")]: {
+            marginTop : "0",
             marginRight : 0,
             marginLeft : "5rem"
         }
@@ -197,6 +200,13 @@ const useStyles = makeStyles(theme => ({
             fontSize : "1em",
             marginLeft : "4em"
         }
+    },
+    h3 : {
+        ...theme.typography.h3 ,
+        [theme.breakpoints.down("xs")]:{
+            textAlign : "center",
+            fontSize : "1rem"
+        }
     }
 }))
 
@@ -219,7 +229,7 @@ export default function About(props) {
                     marginLeft : matchesSM ? "4rem" : undefined,
                     marginTop : matchesSM ? "4rem" : undefined,
                     textAlign : "center" ,
-                    color : "white"}}>
+                    }}>
                         About Myself
                     </Typography>
                 </Grid>
@@ -238,7 +248,8 @@ export default function About(props) {
 
                     <Grid item className={classes.firstCard}>
                         <Grid container direction="column" >
-                            <Grid item style={{marginBottom : "2em"}}>
+                            <Grid item style={{marginBottom : matchesXS ? "0" : "2em" ,
+                                                marginTop : matchesXS ? "2em" : 0}}>
                                     <Card className={classes.card}>
                                         <CardContent>
                                         <Grid item >
@@ -295,8 +306,8 @@ export default function About(props) {
 
 
                     <Grid item className={classes.firstCard}>
-                            <Grid style={{ color : "white" , textAlign : "center"}}>
-                            <Typography variant="h3" className={classes.educationText}>
+                            <Grid style={{  textAlign : "center" , marginBottom : "1rem" }}>
+                            <Typography variant="h3" >
                           Professional Summary
                         </Typography>
                             </Grid>
@@ -327,8 +338,8 @@ export default function About(props) {
             </Grid> 
 
             <Grid item className={classes.firstCard}>
-                            <Grid style={{ color : "white" , textAlign : "center"}}>
-                            <Typography variant="h3" className={classes.educationText}>
+                            <Grid style={{  textAlign : "center" , marginBottom : "1rem"}}>
+                            <Typography variant="h3" >
                           Work History
                         </Typography>
                             </Grid>
@@ -438,8 +449,8 @@ export default function About(props) {
 
                     <Grid item className={classes.firstCard}>
 
-                    <Grid item>
-                        <Typography variant="h3"  style={{ color : "white" , textAlign : "center"}}>
+                    <Grid item style={{ textAlign : "center" , marginBottom : "1rem"}}>
+                        <Typography variant="h3"  >
                             Education
                         </Typography>
                     </Grid> 
@@ -623,6 +634,11 @@ export default function About(props) {
             
                 <Grid container direction="column" alignItems="center">
                    
+                <Grid item style={{  marginLeft : "3em" , marginBottom : matchesXS ? "1rem" : "-3rem"}}>
+                       <Typography variant="h3" >
+                          Skills
+                        </Typography>
+                    </Grid>
 
                     <Grid item>
                     <Skills />

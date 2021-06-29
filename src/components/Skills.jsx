@@ -35,8 +35,8 @@ const useStyles = makeStyles(theme => ({
     },
     firstContainer: {
         marginTop : "5em",
-        [theme.breakpoints.down("sm")] : {
-            marginTop : "2em",
+        [theme.breakpoints.down("xs")] : {
+            marginTop : "0em",
         }
     },
     card : {
@@ -44,6 +44,7 @@ const useStyles = makeStyles(theme => ({
         boxShadow : theme.shadows[10],
         borderRadius : "5%" ,
         padding : "0.5em",
+        marginRight : "1rem",
         [theme.breakpoints.down("sm")] : {
             paddingTop : 0 ,
             paddingBottom : 0,
@@ -58,7 +59,8 @@ const useStyles = makeStyles(theme => ({
             paddingLeft : 0,
             paddingRight : 0,
             borderRadius : 0,
-            width : "100%"
+            width : "100%",
+            marginRight : 0
         }
     },
     firstItem : {
@@ -110,11 +112,7 @@ export default function Skills(props) {
                 <Grid item className={classes.firstRow}>
                     <Grid container justify={matchesSM ? "center" : "space-between"} direction="row" className={classes.firstContainer}>
 
-                    <Grid item container direction="column" alignItems="center">
-                       <Typography variant="h3" style={{ color : "white" , marginTop : "1em"}}>
-                          Skills
-                        </Typography>
-                    </Grid>
+                    
 
                         <Grid item className={classes.firstItem}>
                             <Card className={classes.card}>
