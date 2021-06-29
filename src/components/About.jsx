@@ -20,6 +20,7 @@ import { useMediaQuery } from '@material-ui/core';
 import { useTheme } from '@material-ui/core';
 import revolutionBackground from "../assets/infoBackground.svg";
 
+
 const useStyles = makeStyles(theme => ({
     apoorva : {
         height: "15em",
@@ -176,6 +177,8 @@ const useStyles = makeStyles(theme => ({
     bodyText : {
         color : "grey" , 
         fontSize : "1.5rem" ,
+        fontFamily : "Dancing Script",
+        fontWeight : "700",
         [theme.breakpoints.down("xs")]:{
             textAlign : "center",
             fontSize : "1rem"

@@ -37,13 +37,13 @@ export default createMuiTheme({
             fontWeight : 700
         },
         h2 : {
-            fontFamily : "Arial",
+            fontFamily : "Indie Flower",
             fontSize : "7rem" ,
             color : `${Gold}`,
             fontWeight : 700
         },
         h3 : {
-            fontFamily : "Arial",
+            fontFamily : "Indie Flower",
             fontSize : "2rem" ,
             color : `${Gold}`,
             fontWeight : 700
@@ -51,10 +51,11 @@ export default createMuiTheme({
         subtitle1 : {
             fontSize : "1.25rem",
             fontWeight : 300,
-            color : `${Grey}`
+            color : "white"
         },
         h6 : {
-            color : "white"
+            color : "white",
+            fontFamily : "Indie Flower"
         }
     },
     overrides : {

@@ -7,12 +7,13 @@ import { Link } from 'react-router-dom';
 import customSoftwareIcon from '../assets/wood.svg';
 import zavod from '../assets/zavod.svg';
 import build from '../assets/buildIcon.svg';
+import construction from '../assets/construction.svg';
 import { useMediaQuery } from '@material-ui/core';
 import { useTheme } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     mainContainer: {
-        backgroundColor : "black"
+        backgroundColor : "#fc4c3f"
     },
     viewButton : {
         color : "white",
@@ -30,7 +31,16 @@ const useStyles = makeStyles(theme => ({
         marginLeft : "2em",
         height : '10em',
         width : "10em",
-        borderRadius : "4em",
+        borderRadius : "0em",
+        [theme.breakpoints.down("xs")] : {
+            marginLeft : 0
+        }
+    },
+    woodIcon : {
+        marginLeft : "2em",
+        height : '10em',
+        width : "10em",
+        borderRadius : "10em",
         [theme.breakpoints.down("xs")] : {
             marginLeft : 0
         }
@@ -82,7 +92,7 @@ export default function MyProjects(props) {
                         </Grid>
 
                         <Grid item>
-                            <img className={classes.icon} alt="cauvery" src={customSoftwareIcon} />
+                            <img className={classes.woodIcon} alt="cauvery" src={customSoftwareIcon} />
                         </Grid>
                     </Grid>
                 </Grid>
@@ -147,7 +157,7 @@ export default function MyProjects(props) {
                         </Grid>
 
                         <Grid item>
-                            <img className={classes.iconBuild} alt="build" src={build} />
+                            <img className={classes.iconBuild} alt="construction" src={construction} />
                         </Grid>
                     </Grid>
                 </Grid>

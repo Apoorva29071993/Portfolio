@@ -25,33 +25,47 @@ const useStyles = makeStyles(theme => ({
         },
         [theme.breakpoints.down("xs")] : {
             alignItems : "center",
-            marginTop : "4rem",
+            marginTop : "0rem",
             fontSize : "1.5rem",
         }
     },
     textContainer2 : {
         color : "black",
         textAlign : "center",
+        marginTop : "2rem",
+        fontSize : "5rem",
         [theme.breakpoints.down("sm")] : {
             alignItems : "center",
             fontSize : "3rem",
-            marginTop : "1rem",
-            textAlign : "center",
-            marginBottom : "2rem"
+            marginTop : "5rem",
+            textAlign : "center"
         }
     },
     textContainer3 : {
-        color : "black",
+        color : "white ",
         fontSize : "1.2rem",
         [theme.breakpoints.down("sm")] : {
-            fontSize : "1.4rem",
+            fontSize : "1.2rem",
            // marginTop : "1rem",
            // marginBottom : "-1rem",
       
             textAlign : "center"
         },
         [theme.breakpoints.down("xs")] : {
-            fontSize : "1.53rem",
+            fontSize : "1.2rem",
+        }
+    },
+    textContainer4 : {
+        color : "black",
+        textAlign : "center",
+        marginTop : "2rem",
+        fontSize : "5rem",
+        [theme.breakpoints.down("sm")] : {
+            alignItems : "center",
+            fontSize : "3rem",
+            marginTop : "0rem",
+            textAlign : "center",
+            marginBottom : "2rem"
         }
     },
     gridItem : {
@@ -75,6 +89,16 @@ const useStyles = makeStyles(theme => ({
         "&:hover" : {
             backgroundColor : "gold",
             color : theme.palette.common.white
+        }
+    },
+    bodyText : {
+        color : "red" , 
+        fontSize : "1.5rem" ,
+        fontFamily : "Dancing Script",
+        fontWeight : "700",
+        [theme.breakpoints.down("xs")]:{
+            textAlign : "center",
+            fontSize : "1.2rem"
         }
     }
 }))
@@ -195,15 +219,17 @@ export default function Contact(props) {
             <Grid container direction="column" alignItems="center" style={{backgroundColor : theme.palette.common.gold}}>
 
                 <Grid item container direction="column" alignItems="center" justify="center">
-                    <Grid item >
-                        <Typography variant="body1" className={classes.textContainer1}>
-                            Feel free to contact me anytime
+
+                <Grid item className={classes.gridItem}>    
+                        <Typography variant="h3" className={classes.textContainer2} >
+                            Contact Info
                         </Typography>
-                    </Grid>
+                        </Grid>
+
                     <Grid item >
-                    <Typography variant="h2" className={classes.textContainer2}>
-                            Get In Touch
-                    </Typography>
+                        <Typography variant="body1" className={classes.bodyText}>
+                            Feel free to contact me anytime.
+                        </Typography>
                     </Grid>
                 </Grid>
 
@@ -211,14 +237,10 @@ export default function Contact(props) {
                 <Grid item container direction={matchesSM ? "column" : "row"} style={{marginTop : matchesSM ? 0 : "3rem"}}>
                     <Grid item container direction="column" alignItems={matchesSM ? "center" : undefined} 
                     justify="center" md style={{marginLeft : matchesSM ? 0 :  "2rem"}}>
-                        <Grid item className={classes.gridItem}>    
-                        <Typography variant="h3" className={classes.textContainer2} >
-                            Contact Info
-                        </Typography>
-                        </Grid>
+                        
 
                         <Grid item className={classes.gridItem}>
-                        <Typography variant="body1" className={classes.textContainer3}>
+                        <Typography variant="body1" className={classes.bodyText}>
                             Always available for freelance work if the right project
                             comes along. feel free to contact me !
                         </Typography>
@@ -228,8 +250,8 @@ export default function Contact(props) {
                             <Grid item >
                                 <img alt="location" src={emailIcon}  
                                 style={{marginRight : "1em" ,
-                                        marginLeft : matchesXS ? "1em" : 0 ,
-                                        marginTop : matchesXS ? "0.8em" : 0 ,
+                                        marginLeft : matchesXS ? "2em" : 0 ,
+                                        marginTop : matchesXS ? "0.5em" : 0 ,
                                        verticalAlign : "bottom"}} />
                             </Grid>
 
@@ -245,8 +267,8 @@ export default function Contact(props) {
                             <Grid item > 
                                 <img alt="phone" src={phoneIcon} 
                                 style={{marginRight : "1em" ,
-                                 marginLeft : matchesXS ? "3em" : 0,
-                                 marginTop : matchesXS ? "0.5em" : 0}}/> 
+                                 marginLeft : matchesXS ? "5em" : 0,
+                                 marginTop : matchesXS ? "0.2em" : 0}}/> 
                             </Grid>
 
                             <Grid item >
@@ -262,7 +284,7 @@ export default function Contact(props) {
                         <Grid item>
                             <Grid container direction="column" >
                             <Grid item>
-                        <Typography variant="h3" className={classes.textContainer2}>
+                        <Typography variant="h3" className={classes.textContainer4}>
                             Mail me
                         </Typography>
                         </Grid>
