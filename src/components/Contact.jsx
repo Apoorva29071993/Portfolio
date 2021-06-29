@@ -61,7 +61,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     message : {
-        border: `2px solid ${theme.palette.common.gold}`,
+        border: `2px solid ${theme.palette.common.white}`,
         marginTop : "5em",
         borderRadius : 5
     },
@@ -71,10 +71,10 @@ const useStyles = makeStyles(theme => ({
         width : 245 ,
         fontSize : "1rem" ,
         color : "black" ,
-        backgroundColor : theme.palette.common.gold,
+        backgroundColor : theme.palette.common.white,
         "&:hover" : {
-            backgroundColor : "white",
-            color : theme.palette.common.gold
+            backgroundColor : "gold",
+            color : theme.palette.common.white
         }
     }
 }))
@@ -229,6 +229,7 @@ export default function Contact(props) {
                                 <img alt="location" src={emailIcon}  
                                 style={{marginRight : "1em" ,
                                         marginLeft : matchesXS ? "1em" : 0 ,
+                                        marginTop : matchesXS ? "0.8em" : 0 ,
                                        verticalAlign : "bottom"}} />
                             </Grid>
 
@@ -245,7 +246,7 @@ export default function Contact(props) {
                                 <img alt="phone" src={phoneIcon} 
                                 style={{marginRight : "1em" ,
                                  marginLeft : matchesXS ? "3em" : 0,
-                                 marginTop : matchesXS ? "1em" : 0}}/> 
+                                 marginTop : matchesXS ? "0.5em" : 0}}/> 
                             </Grid>
 
                             <Grid item >

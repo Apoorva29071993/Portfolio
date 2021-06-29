@@ -76,7 +76,7 @@ export default function MyProjects(props) {
                             <Typography variant="subtitle1">
                                 All types of boxes
                             </Typography>
-                            <Button variant="outlined" className={classes.viewButton}>
+                            <Button variant="outlined" component={Link} to="/cauvery" className={classes.viewButton}>
                                 <span style={{marginRight : 10}}>View Details</span>
                             </Button>
                         </Grid>
@@ -107,7 +107,7 @@ export default function MyProjects(props) {
                             <Typography variant="subtitle1">
                                 Easy Payment Options
                             </Typography>
-                            <Button variant="outlined" className={classes.viewButton}>
+                            <Button variant="outlined" component={Link} to="/ecommerce" className={classes.viewButton}>
                                 <span style={{marginRight : 10}}>View Details</span>
                             </Button>
                         </Grid>
@@ -141,7 +141,7 @@ export default function MyProjects(props) {
                             <Typography variant="subtitle1">
                                 Group of Engineers
                             </Typography>
-                            <Button variant="outlined" className={classes.viewButton}>
+                            <Button variant="outlined" component={Link} to="/nisarga" className={classes.viewButton}>
                                 <span style={{marginRight : 10}}>View Details</span>
                             </Button>
                         </Grid>

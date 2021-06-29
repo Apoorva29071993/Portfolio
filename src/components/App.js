@@ -10,6 +10,9 @@ import MyProjects from './MyProjects.jsx';
 import Skills from './Skills.jsx';
 import Cauvery from './Cauvery.jsx';
 import Contact from './Contact.jsx';
+import SignIn from './SignIn.jsx';
+import ECommerce from './ECommerce.jsx';
+import Nisarga from './Nisarga.jsx';
 
 function App() {
 
@@ -25,12 +28,12 @@ function App() {
           <Route exact path="/"><Home value={value} setValue={setValue}/></Route> 
           <Route exact path="/myprojects"><MyProjects/></Route>
           <Route exact path="/cauvery" render={()=><Cauvery />} />
-          <Route exact path="/ecommerce" component={()=><div>E-Commerce</div>} />
-          <Route exact path="/nisarga" component={()=><div>Nisarga</div>} />
+          <Route exact path="/ecommerce" render={()=><ECommerce/>} />
+          <Route exact path="/nisarga" render={()=><Nisarga/>} />
           <Route exact path="/about" component={About} />
           <Route exact path="/skills" ><Skills /></Route> 
           <Route exact path="/contact" render={()=><Contact />} />
-          <Route exact path="/signin" component={()=><div>Sign In</div>} />
+          <Route exact path="/signin" render={()=><SignIn/>} />
         </Switch>
         <Footer value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
       </BrowserRouter>
