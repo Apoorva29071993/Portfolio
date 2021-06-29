@@ -93,7 +93,7 @@ const useStyles = makeStyles(theme => ({
     },
     bodyText : {
         color : "red" , 
-        fontSize : "1.5rem" ,
+        fontSize : "2.5rem" ,
         fontFamily : "Dancing Script",
         fontWeight : "700",
         [theme.breakpoints.down("xs")]:{

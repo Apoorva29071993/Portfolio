@@ -39,14 +39,28 @@ const useStyles = makeStyles(theme => ({
      },
      heading : {
       textAlign : "center" ,
-      
       fontSize : "2em",
       color : 'red'
      },
      link : {
         textDecoration : "none",
-        
-     }
+     },
+     bodyText : {
+        color : "white" , 
+        fontSize : "1.5rem" ,
+        fontFamily : "Viaoda Libre",
+        fontWeight : "700",
+        [theme.breakpoints.down("xs")]:{
+            textAlign : "center",
+            fontSize : "1rem"
+        }
+    },
+    span : {
+        color : "black"
+    },
+    contentContainer : {
+        textAlign : "center"
+    }
 }));
 
 export default function ECommerce(props) {
@@ -74,25 +88,34 @@ export default function ECommerce(props) {
 
             <Grid item style={{marginTop : "5em"}}>
                 <Typography variant="h2" className={classes.heading}>
-                          Clothes Shopping
+                          Project Name : Clothes Shopping
                 </Typography>
             </Grid>
 
-            <Grid item >
-                <Typography variant="h2" className={classes.heading}>
-                          Great Discounts
-                </Typography>
+            <Grid item className={classes.contentContainer}> 
+            <Typography variant="body1" className={classes.bodyText}>
+                <span className={classes.span}>  Description : </span> This is a merchendise website . Used for shopping online 
+                along with Payment using card . 
+            </Typography>
             </Grid>
-            <Grid item> 
-                <Typography variant="body1" className={classes.heading} paragraph>
-                    This website is for Merchendise shopping. We can buy all kinds of stuff and pay using card.
-                    Please shop 
-                </Typography>
+            <Grid item className={classes.contentContainer}>
+            <Typography variant="body1" className={classes.bodyText}>
+                <span className={classes.span}>  Technologies Used : </span> React JavaScript , Redux , Redux Sagas ,
+                Styled Components , NodeMon , Node etc
+            </Typography>
             </Grid>
+            <Grid item className={classes.contentContainer}> 
+            <Typography variant="body1" className={classes.bodyText}>
+                <span className={classes.span}>  Challenges Faced : </span> 1) Converted the project from using Styled Components
+                to Material UI .<br/>
+                2) Implemented the Mobile Responsiveness
+            </Typography>
+            </Grid>
+            
 
             <Grid item component={"a"} href="https://crwn-apoorva.herokuapp.com" rel="noopener noreferrer" target="_blank" className={classes.link}>
             <Typography variant="subtitle1" className={classes.heading} >
-                         Visit Site
+                        Click Here To Visit Site
             </Typography>
             </Grid>
 
