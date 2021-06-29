@@ -112,7 +112,7 @@ const useStyles = makeStyles(theme => ({
         marginLeft : '3rem',
         marginRight : '3rem' ,
         marginBottom : "3rem",
-        backgroundColor : "red",
+        backgroundColor : "#fc4c3f",
         borderRadius : "0rem" ,
        // backgroundImage: `url(${revolutionBackground})`,
         [theme.breakpoints.down("sm")]: {
@@ -173,9 +173,16 @@ const useStyles = makeStyles(theme => ({
             marginTop : "0.5em"
           }
     },
-    educationText : {
-        color : "white" , 
-        [theme.breakpoints.down("sm")]:{
+    bodyText : {
+        color : "grey" , 
+        fontSize : "1.5rem" ,
+        [theme.breakpoints.down("xs")]:{
+            textAlign : "center",
+            fontSize : "1rem"
+        }
+    },
+    subHeading : {
+        [theme.breakpoints.down("xs")]:{
             textAlign : "center",
             fontSize : "1rem"
         }
@@ -207,6 +214,9 @@ const useStyles = makeStyles(theme => ({
             textAlign : "center",
             fontSize : "1rem"
         }
+    },
+    span : {
+        color : "skyblue"
     }
 }))
 
@@ -253,23 +263,23 @@ export default function About(props) {
                                     <Card className={classes.card}>
                                         <CardContent>
                                         <Grid item >
-                                        <Typography variant="h6" className={classes.educationText}>
-                                        <span style={{color : "white"}}> Name : </span> Mr.Apoorva A. Jakati
+                                        <Typography variant="body1" className={classes.bodyText}>
+                                        <span className={classes.span}> Name : </span> Mr.Apoorva A. Jakati
                                         </Typography>
-                                        <Typography variant="h6" className={classes.educationText}>
-                                            <span style={{color : "white"}}> DOB :  </span> 29/07/1993
+                                        <Typography variant="body1" className={classes.bodyText}>
+                                            <span className={classes.span}> DOB :  </span> 29/07/1993
                                         </Typography>
-                                        <Typography variant="h6" className={classes.educationText}>
-                                            <span style={{color : "white"}}> Phone :  </span> +91 8892510285
+                                        <Typography variant="body1" className={classes.bodyText}>
+                                            <span className={classes.span}> Phone :  </span> +91 8892510285
                                         </Typography>
-                                        <Typography variant="h6" className={classes.educationText}>
-                                            <span style={{color : "white"}}>  Email : </span> apoorva.jakati@gmail.com
+                                        <Typography variant="body1" className={classes.bodyText}>
+                                            <span className={classes.span}>  Email : </span> apoorva.jakati@gmail.com
                                         </Typography>
-                                        <Typography variant="h6" className={classes.educationText}>
-                                            <span style={{color : "white"}}>  Languages : </span> English , Kannada
+                                        <Typography variant="body1" className={classes.bodyText}>
+                                            <span className={classes.span}>  Languages : </span> English , Kannada
                                         </Typography>
-                                        <Typography variant="h6" className={classes.educationText}>
-                                            <span style={{color : "white"}}>  Address : </span> #646,Vithobha Nivas,1st main , 4th cross ,<br/>
+                                        <Typography variant="body1" className={classes.bodyText}>
+                                            <span className={classes.span}>  Address : </span> #646,Vithobha Nivas,1st main , 4th cross ,<br/>
                                              pipeline road , T. Dasarahalli, Bangalore, KA 560057
                                         </Typography>
                                         </Grid> 
@@ -315,12 +325,12 @@ export default function About(props) {
                     <Card className={classes.card}>
                         <CardContent>
                         <Grid item container direction="column" justify="center" alignItems="center">
-                        <Typography variant="body1" className={classes.educationText} paragraph>
+                        <Typography variant="body1" className={classes.bodyText} paragraph>
                         Have 2 years & 10 months of experience in software development using Java, J2EE and
                         Javascript technologies.
                         </Typography>
                         
-                        <Typography variant="body1" className={classes.educationText} paragraph>
+                        <Typography variant="body1" className={classes.bodyText} paragraph>
                          Also experienced in Spring MVC, Hibernate frameworks, SQL queries
                         (using MySql) & Tomcat 8.x. Proficient with tools such as Eclipse, VS Code, Ant and Maven.
                         </Typography>
@@ -363,28 +373,28 @@ export default function About(props) {
                                 <img className={classes.icon} alt="programmer" src={programmer} />
                             </Grid>
                                         <Grid item>
-                                            <Typography variant="h4" className={classes.educationText}>
+                                            <Typography variant="h3" className={classes.subHeading}>
                                             Software Engineer
                                             </Typography>
-                                            <Typography variant="h4" className={classes.educationText}>
+                                            <Typography variant="h3" className={classes.subHeading}>
                                             Imonitor Solutions (Bangalore, India)
                                             </Typography>
-                                            <Typography variant="h4" className={classes.educationText} >
+                                            <Typography variant="h3" className={classes.subHeading} >
                                             Sep 2017 - July 2019
                                             </Typography>
-                                            <Typography variant="subtitle1" className={classes.educationText}>
-                                            Project Name : Home Automation
+                                            <Typography variant="subtitle1" className={classes.bodyText}>
+                                            <span className={classes.span}>Project Name : Home Automation </span>
                                             </Typography>
-                                            <Typography variant="body1" className={classes.educationText} paragraph>
+                                            <Typography variant="body1" className={classes.bodyText} paragraph>
                                             I have developed and tested UI, APIs, status, alerts, alarms, device configurations &
                                             control functionalities on IOT devices like AC, Dimmer, Security Systems, Switches,
                                             Dimmers, Cameras, LCD Remotes etc.
                                           </Typography>
 
-                                          <Typography variant="subtitle1" className={classes.educationText}>
-                                            Project Name : Alexa & Google Home
+                                          <Typography variant="subtitle1" className={classes.bodyText}>
+                                            <span className={classes.span}>Project Name  : Alexa & Google Home </span>
                                             </Typography>
-                                            <Typography variant="body1" className={classes.educationText} paragraph>
+                                            <Typography variant="body1" className={classes.bodyText} paragraph>
                                             Implemented smart home speech to text conversions for Alexa and Google Home device
                                             using Node API and restful web services.
                                           </Typography>
@@ -392,8 +402,8 @@ export default function About(props) {
                                       
                                     
                                     <Grid item>
-                                    <Typography variant="h4" className={classes.educationText} >
-                                           -----------------------------------------------------------------------------------------------------------------------
+                                    <Typography variant="h4" className={classes.bodyText} >
+                                           -----------------------------------------------------------------------------------------------------------
 
                                     </Typography>
                                     </Grid>
@@ -403,27 +413,27 @@ export default function About(props) {
                                    </Grid>
 
                                       <Grid item>
-                                            <Typography variant="h4" className={classes.educationText}>
+                                            <Typography variant="h3" className={classes.subHeading}>
                                             Graduate Apprentice Trainee
                                             </Typography>
-                                            <Typography variant="h4" className={classes.educationText}>
+                                            <Typography variant="h3" className={classes.subHeading}>
                                             Bharat Electronics Ltd. (Bangalore, India)
                                             </Typography>
-                                            <Typography variant="h4" className={classes.educationText} >
+                                            <Typography variant="h3" className={classes.subHeading} >
                                             Feb 2016 - Feb 2017
                                             </Typography>
-                                            <Typography variant="subtitle1" className={classes.educationText}>
-                                            Project Name : Human Resource Information System
+                                            <Typography variant="subtitle1" className={classes.bodyText}>
+                                            <span className={classes.span}>Project Name : Human Resource Information System</span> 
                                             </Typography>
-                                            <Typography variant="body1" className={classes.educationText} paragraph>
+                                            <Typography variant="body1" className={classes.bodyText} paragraph>
                                             Developed UI and backend functionalities to retrieve attendance, payroll, identification
                                             and other details for a given period of time using Java, Struts and HTML.
                                           </Typography>
 
-                                          <Typography variant="subtitle1" className={classes.educationText}>
-                                            Project Name : Food Order Management System
+                                          <Typography variant="subtitle1" className={classes.bodyText}>
+                                          <span className={classes.span}>Project Name : Food Order Management System </span>
                                             </Typography>
-                                            <Typography variant="body1" className={classes.educationText} paragraph>
+                                            <Typography variant="body1" className={classes.bodyText} paragraph>
                                             Developed a food order management application in integration with the premises canteen
                                             exclusively for the company staff.
                                           </Typography>
@@ -470,13 +480,13 @@ export default function About(props) {
                                                 marginBottom : matchesSM ? 0 : "2rem" }}>
                                     <Grid container direction="column"   alignItems="center">
                                         <Grid item>
-                                            <Typography variant="h4" className={classes.educationText}>
+                                            <Typography variant="h3" className={classes.subHeading}>
                                             Bachelor in Engineering
                                             </Typography>
-                                            <Typography variant="subtitle1" className={classes.educationText}>
+                                            <Typography variant="subtitle1" className={classes.bodyText}>
                                             Mechanical Engineering
                                             </Typography>
-                                            <Typography variant="subtitle1" className={classes.educationText}>
+                                            <Typography variant="subtitle1" className={classes.bodyText}>
                                             Sri Krishna Institute of Technology
                                             </Typography>
                                     </Grid>
@@ -484,7 +494,7 @@ export default function About(props) {
                             </Grid>
 
                             <Grid item md style={{marginBottom : matchesSM ? "3rem" : 0 }}>
-                            <Typography variant="h4" className={classes.educationText}>
+                            <Typography variant="h4" className={classes.bodyText}>
                                2011 - 2015
                             </Typography>
                             </Grid>
@@ -503,13 +513,13 @@ export default function About(props) {
                                                 }}>
                                     <Grid container direction="column" alignItems="center">
                                         <Grid item>
-                                            <Typography variant="h4" className={classes.educationText}>
+                                            <Typography variant="h3" className={classes.subHeading}>
                                             PUC
                                             </Typography>
-                                            <Typography variant="subtitle1" className={classes.educationText}>
+                                            <Typography variant="subtitle1" className={classes.bodyText}>
                                             PCMB (72.25%)
                                             </Typography>
-                                            <Typography variant="subtitle1" className={classes.educationText}>
+                                            <Typography variant="subtitle1" className={classes.bodyText}>
                                             Sheshadripuram Composite PU College
                                             </Typography>
                                     </Grid>
@@ -517,7 +527,7 @@ export default function About(props) {
                             </Grid>
 
                             <Grid item md style={{marginBottom : matchesSM ? "3rem" : 0 }}>
-                            <Typography variant="h4" className={classes.educationText}>
+                            <Typography variant="h4" className={classes.bodyText}>
                                2009 - 2011
                             </Typography>
                             </Grid>
@@ -533,10 +543,10 @@ export default function About(props) {
                             <Grid item  style={{marginRight : matchesSM ? "2rem" : "7.5rem" , marginLeft : matchesSM ? "2rem" : "5rem"}}>
                                     <Grid container direction="column" alignItems="center">
                                         <Grid item>
-                                            <Typography variant="h4" className={classes.educationText}>
+                                            <Typography variant="h3" className={classes.subHeading}>
                                             SSLC
                                             </Typography>
-                                            <Typography variant="subtitle1" className={classes.educationText}>
+                                            <Typography variant="subtitle1" className={classes.bodyText}>
                                             St. Mary's High School (90.40%)
                                             </Typography>
                                     </Grid>
@@ -544,7 +554,7 @@ export default function About(props) {
                             </Grid>
 
                             <Grid item md>
-                            <Typography variant="h4" className={classes.educationText}>
+                            <Typography variant="h4" className={classes.bodyText}>
                                2009
                             </Typography>
                             </Grid>
