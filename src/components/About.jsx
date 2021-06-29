@@ -15,7 +15,7 @@ import twelve from '../assets/twelve.svg';
 import programmer from '../assets/programmer.svg';
 import workstation from '../assets/workstation.svg';
 import Paper from '@material-ui/core/Paper';
-import Skills from '../components/Skills';
+import Skills from './Skills';
 import { useMediaQuery } from '@material-ui/core';
 import { useTheme } from '@material-ui/core';
 import revolutionBackground from "../assets/infoBackground.svg";

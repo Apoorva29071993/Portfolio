@@ -37,14 +37,14 @@ export default createMuiTheme({
             fontWeight : 700
         },
         h2 : {
-            fontFamily : "Indie Flower",
+            fontFamily : "M PLUS Rounded 1c",
             fontSize : "7rem" ,
             color : `${Gold}`,
             fontWeight : 700
         },
         h3 : {
-            fontFamily : "Indie Flower",
-            fontSize : "2rem" ,
+            fontFamily : "M PLUS Rounded 1c",
+            fontSize : "1.7rem" ,
             color : `${White}`,
             fontWeight : 700
         },
@@ -55,7 +55,7 @@ export default createMuiTheme({
         },
         h6 : {
             color : "white",
-            fontFamily : "Indie Flower"
+            fontFamily : "M PLUS Rounded 1c"
         }
     },
     overrides : {

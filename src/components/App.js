@@ -31,7 +31,7 @@ function App() {
           <Route exact path="/ecommerce" render={()=><ECommerce/>} />
           <Route exact path="/nisarga" render={()=><Nisarga/>} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/skills" ><Skills /></Route> 
+          <Route exact path="/hobbies" render={()=><div>Hobbies</div>} />
           <Route exact path="/contact" render={()=><Contact />} />
           <Route exact path="/signin" render={()=><SignIn/>} />
         </Switch>

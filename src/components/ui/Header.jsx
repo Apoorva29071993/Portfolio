@@ -196,7 +196,7 @@ export default function Header(props) {
                     },
 
                     {name : "About" , link : "/about" , activeIndex : 2},
-                    {name : "Skills" , link : "/skills" , activeIndex : 3},
+                    {name : "Hobbies" , link : "/hobbies" , activeIndex : 3},
                     {name : "ContactMe" , link : "/contact" , activeIndex : 4}];                    
 
     useEffect(() => {
